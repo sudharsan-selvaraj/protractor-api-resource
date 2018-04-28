@@ -1,0 +1,1 @@
+# protractor-api-resource
