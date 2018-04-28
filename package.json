@@ -1,0 +1,39 @@
+{
+  "name": "protractor-api-resource",
+  "version": "1.0.0",
+  "description": "This library extends request npm module. It helps write easy protractor tests when test data are objtained from API response.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudharsan-selvaraj/protractor-api-resource.git"
+  },
+  "keywords": [
+    "protractor"
+  ],
+  "author": "Sudharsan Selvaraj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudharsan-selvaraj/protractor-api-resource/issues"
+  },
+  "homepage": "https://github.com/sudharsan-selvaraj/protractor-api-resource#readme",
+  "dependencies": {
+    "q": "^1.5.1",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/jasminewd2": "^2.0.3",
+    "@types/node": "^8.0.0",
+    "@types/protractor": "^4.0.0",
+    "@types/selenium-webdriver": "^2.53.33",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-sequence": "^1.0.0",
+    "gulp-typescript": "^4.0.2",
+    "protractor": "^5.3.1",
+    "typescript": "^2.8.3"
+  }
+}
