@@ -28,13 +28,14 @@ export class RequestHandler {
     private handleCookieAuthentication(requestObject, cookieNames) {
         return this.getCookieObjectFromBrowser()
             .then(function (cookieObject) {
-                !requestObject.hasOwnProperty("header") && (requestObject["header"] = {});
+                !requestObject.hasOwnProperty("headers") && (requestObject["headers"] = {});
                 var cookieString = '';
                 cookieNames.forEach(function (cookie) {
                     cookieString += `${cookie}=${cookieObject[cookie]};`
-                    requestObject["header"][cookie] = cookieObject[cookie].toString();
+                    requestObject["headers"][cookie] = cookieObject[cookie].toString();
                 });
-                requestObject["header"]["cookie"] = cookieString;
+                requestObject["headers"]["cookie"] = cookieString;
+                return new ResponseHandler(this.requestMethods[requestObject.method](requestObject));
             });
     }
 

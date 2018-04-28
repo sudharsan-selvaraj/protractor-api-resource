@@ -22,7 +22,6 @@ export class ResourcePrototypeGenerator {
                 requestObject["body"] = JSON.stringify(payload);
                 requestObject["headers"] = {
                     "content-type": "application/json",
-                    "cache-control": "no-cache"
                 }
             }
 

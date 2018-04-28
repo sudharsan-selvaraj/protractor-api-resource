@@ -2,9 +2,9 @@
   "name": "protractor-api-resource",
   "version": "1.0.0",
   "description": "This library extends request npm module. It helps write easy protractor tests when test data are objtained from API response.",
-  "main": "index.js",
+  "main": "./bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine test/spec/**/*.js",
     "build": "gulp"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "gulp": "^3.9.1",
     "gulp-sequence": "^1.0.0",
     "gulp-typescript": "^4.0.2",
+    "jasmine": "^3.1.0",
     "protractor": "^5.3.1",
     "typescript": "^2.8.3"
   }
