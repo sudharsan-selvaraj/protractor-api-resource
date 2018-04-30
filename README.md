@@ -1,5 +1,5 @@
 # protractor-api-resource
-API testing is now made simple with protractor. **protractor-api-resource** is a REST Client framework created using **request** npm module to use in protractor tests for making API calls. Register all service endpoints as individual service methods and reuse the same inside the test. Inspired from **[angular-resource](https://docs.angularjs.org/api/ngResource/service/$resource")** projects.
+API testing is now made simple with protractor. **protractor-api-resource** is a REST Client framework created using **request** npm module to use in protractor tests for making API calls. Register all service endpoints as individual service methods and reuse the same inside the test. Inspired from **[angular-resource](https://docs.angularjs.org/api/ngResource/service/$resource)** project.
 
 
 ### Features
@@ -21,8 +21,9 @@ If you are using [Protractor](https://www.npmjs.com/package/protractor) for e2e 
 #### Example
 
 Using javascript, first import the npm module in your tests.
-
-    const apiResouce = require("protractor-api-resource").ProtractorApiResource
+```javascript
+const apiResource = require("protractor-api-resource").ProtractorApiResource
+```
 
 ##### Javascript　
 
@@ -48,7 +49,7 @@ describe("Test response for all REST API methods", function () {
     };
 
      beforeAll(function () {
-        apiClient = new apiResouce("https://jsonplaceholder.typicode.com/");
+        apiClient = new apiResource("https://jsonplaceholder.typicode.com/");
         apiClient.registerService(serviceEnpoints);
     });
 });
@@ -104,12 +105,12 @@ It's very simple. Just mention the type of authentication at the time of creatin
 
 ##### Basic authentication.
 ```javascript
-var apiClient = new apiResouce("https://jsonplaceholder.typicode.com/").withBasicAuth(username,password);
+var apiClient = new apiResource("https://jsonplaceholder.typicode.com/").withBasicAuth(username,password);
 ```
 
 ##### Token based authentication.
 ```javascript
-var apiClient = new apiResouce("https://jsonplaceholder.typicode.com/").withTokenAuthentication(token);
+var apiClient = new apiResource("https://jsonplaceholder.typicode.com/").withTokenAuthentication(token);
 ```
 
 You can also modify the authencation type any time inside the tests using `apiClient .withTokenAuthentication(token)`
