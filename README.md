@@ -47,53 +47,53 @@ describe("Test response for all REST API methods", function () {
         },
     };
 
-		beforeAll(function () {
-			apiClient = new apiResouce("https://jsonplaceholder.typicode.com/");
-			apiClient.registerService(serviceEnpoints);
-			});
-	});
+     beforeAll(function () {
+        apiClient = new apiResouce("https://jsonplaceholder.typicode.com/");
+        apiClient.registerService(serviceEnpoints);
+    });
+});
 ```
 
 Thats it. Now you can directly access the service endpoints from your tests as below.
 ```javascript
-	it("Test GET method", function (done) {
-        var expectedResponse = {
-            "userId": 1,
-            "id": 1,
-            "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-            "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-        };
+it("Test GET method", function (done) {
+    var expectedResponse = {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    };
 
-        apiClient.getPosts({postId: 1}).toJSON().then(function (actualResponse) {
-            expect(actualResponse).toEqual(expectedResponse);
-            done();
-        });
+    apiClient.getPosts({postId: 1}).toJSON().then(function (actualResponse) {
+        expect(actualResponse).toEqual(expectedResponse);
+        done();
     });
+});
 
 ```
 
 For **POST**,**PUT** and **PATCH** calls, you can also send payloads like,
 
 ```javascript
-	it("Test POST method", function (done) {
-        var payLoad = {
-            title: 'foo',
-            body: 'bar',
-            userId: 1
-        };
+it("Test POST method", function (done) {
+    var payLoad = {
+        title: 'foo',
+        body: 'bar',
+        userId: 1
+    };
 
-        var expectedResponse = {
-            id: 101,
-            title: 'foo',
-            body: 'bar',
-            userId: 1
-        };
-		//First parameter is for query params and second parameter is for request payload.
-        apiClient.createPost({}, payLoad).toJSON().then(function (actualResponse) {
-            expect(actualResponse).toEqual(expectedResponse);
-            done();
-        });
+    var expectedResponse = {
+        id: 101,
+        title: 'foo',
+        body: 'bar',
+        userId: 1
+    };
+    //First parameter is for query params and second parameter is for request payload.
+    apiClient.createPost({}, payLoad).toJSON().then(function (actualResponse) {
+        expect(actualResponse).toEqual(expectedResponse);
+        done();
     });
+});
 ```
 
 `toJson()` method will parse the API respose and returns the respective  JSON object and `toSting()` willl return the plain string.
@@ -104,12 +104,12 @@ It's very simple. Just mention the type of authentication at the time of creatin
 
 ##### Basic authentication.
 ```javascript
-	var apiClient = new apiResouce("https://jsonplaceholder.typicode.com/").withBasicAuth(username,password);
+var apiClient = new apiResouce("https://jsonplaceholder.typicode.com/").withBasicAuth(username,password);
 ```
 
 ##### Token based authentication.
 ```javascript
-	var apiClient = new apiResouce("https://jsonplaceholder.typicode.com/").withTokenAuthentication(token);
+var apiClient = new apiResouce("https://jsonplaceholder.typicode.com/").withTokenAuthentication(token);
 ```
 
 You can also modify the authencation type any time inside the tests using `apiClient .withTokenAuthentication(token)`
