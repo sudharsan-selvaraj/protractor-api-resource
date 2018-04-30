@@ -1,4 +1,7 @@
 # protractor-api-resource
+
+[![Build Status](https://travis-ci.org/sudharsan-selvaraj/protractor-api-resource.svg?branch=master)](https://travis-ci.org/sudharsan-selvaraj/protractor-api-resource)
+
 API testing is now made simple with protractor. **protractor-api-resource** is a REST Client framework created using **request** npm module to use in protractor tests for making API calls. Register all service endpoints as individual service methods and reuse the same inside the test. Inspired from **[angular-resource](https://docs.angularjs.org/api/ngResource/service/$resource)** project.
 
 

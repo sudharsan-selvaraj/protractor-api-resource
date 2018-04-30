@@ -4,7 +4,7 @@
   "description": "This library extends request npm module. It helps write easy protractor tests when test data are objtained from API response.",
   "main": "./bin/index.js",
   "scripts": {
-    "test": "jasmine test/spec/**/*.js",
+    "test": "npm run build && jasmine test/spec/**/*.js",
     "build": "gulp"
   },
   "repository": {
