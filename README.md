@@ -2,29 +2,29 @@
 API testing is now made simple with protractor. **protractor-api-resource** is a REST Client framework created using **request** npm module to use in protractor tests for making API calls. Register all service endpoints as individual service methods and reuse the same inside the test. Inspired from **[angular-resource](https://docs.angularjs.org/api/ngResource/service/$resource")** projects.
 
 
-###Features
+### Features
 
 - Create reusable methods for all service end points once and use it throughout the tests.
 - Supports all rest API methods(GET,POST,PUT,PATCH and DELETE).
 - Supports authentication protected endpoints.
 - Can be used in any node js projects.
 
-###Why is it useful?
+### Why is it useful?
 If you are using [Protractor](https://www.npmjs.com/package/protractor) for e2e testing and you need to get test data from API then this module will come handy with lot of predefined functionalities.
 
-###Usage
+### Usage
 
-#####Install using npm
+##### Install using npm
 
 `$ npm install protractor-api-resource`
 
-####Example
+#### Example
 
 Using javascript, first import the npm module in your tests.
 
     const apiResouce = require("protractor-api-resource").ProtractorApiResource
 
-#####Javascript　
+##### Javascript　
 
 ```javascript
 describe("Test response for all REST API methods", function () {
@@ -98,21 +98,21 @@ For **POST**,**PUT** and **PATCH** calls, you can also send payloads like,
 
 `toJson()` method will parse the API respose and returns the respective  JSON object and `toSting()` willl return the plain string.
 
-###What if the service enpoints are protected with authentication?
+### What if the service enpoints are protected with authentication?
 
 It's very simple. Just mention the type of authentication at the time of creating a object.
 
-#####Basic authentication.
+##### Basic authentication.
 ```javascript
 	var apiClient = new apiResouce("https://jsonplaceholder.typicode.com/").withBasicAuth(username,password);
 ```
 
-#####Token based authentication.
+##### Token based authentication.
 ```javascript
 	var apiClient = new apiResouce("https://jsonplaceholder.typicode.com/").withTokenAuthentication(token);
 ```
 
 You can also modify the authencation type any time inside the tests using `apiClient .withTokenAuthentication(token)`
 
-###Reference
+### Reference
 https://github.com/sudharsan-selvaraj/protractor-api-resource/blob/master/test/spec/apiWithNoAuthentication.spec.js
